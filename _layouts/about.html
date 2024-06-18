@@ -1,9 +1,44 @@
----
-layout: post
-hidden:
-  - header
-  - navigator
-  - related_posts
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
 
-{{ content }}
+        .background {
+            background-image: url('https://wallpapercave.com/wp/wp4345268.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="content">
+            <h1>About Me</h1>
+            <p>Hello! I am [Your Name]. Welcome to my personal webpage.</p>
+            <p>I am passionate about [Your Interests].</p>
+        </div>
+    </div>
+</body>
+</html>
