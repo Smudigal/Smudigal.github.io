@@ -1,16 +1,78 @@
----
-layout: framework
-sidebar: tag-list
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
 
-{%- if site.posts.size > 0 -%}
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-  {%- include functions.html func='log' level='debug' msg='Get tags value' -%}
-  {%- include functions.html func='get_tags' -%}
-  {% assign tags = return %}
+        .social-link {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #0073b1; /* LinkedIn blue color */
+        }
 
-  {% assign keys = tags %}
-  {% assign field = 'tags' %}
-  {%- include views/segments.html -%}
+        .social-link img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
 
-{%- endif -%}
+        .email-link {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #d44638; /* Gmail red color */
+        }
+
+        .email-link img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .thank-you {
+            color: red;
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="https://www.linkedin.com/in/sidharth-mudigal" class="social-link" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn Icon">
+            LinkedIn: Sidharth Mudigal
+        </a>
+        <a href="mailto:mudigals@msu.edu" class="email-link">
+            <img src="https://img.icons8.com/fluency/48/000000/new-post.png" alt="Email Icon">
+            Email: mudigals@msu.edu
+        </a>
+        <div class="thank-you">Thank you</div>
+    </div>
+</body>
+</html>
+
