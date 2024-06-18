@@ -1,3 +1,22 @@
+---
+layout: framework
+sidebar: archive-list
+---
+
+{%- if site.posts.size > 0 -%}
+
+  {% include functions.html func='log' level='debug' msg='Get datetimes value' %}
+
+  {% assign filter = '%Y' %}
+  {% include functions.html func='get_datetimes' %}
+  {% assign datetimes = return %}
+
+  {% assign keys = datetimes | reverse %}
+  {% assign field = 'date' %}
+  {% include views/segments.html %}
+
+{%- endif -%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +34,7 @@
         }
 
         .background {
-            background-image: url('https://wallpapercave.com/wp/wp4345268.jpg');
+            background-image: url('https://th.bing.com/th/id/OIP.J1ixHwKTitmggHYq9h7knwHaDQ?w=274&h=154&c=7&r=0&o=5&dpr=1.1&pid=1.7');
             background-size: cover;
             background-position: center;
             height: 100%;
@@ -49,45 +68,17 @@
             <h1>Archive</h1>
             <img src="https://collegecliffs.com/wp-content/uploads/2020/10/Clubs-Organizations_featured.png" alt="Archive" class="archive-img">
             <div class="archive-content">
-                <h2>MSU Autonomous Club</h2>
-                <p>The MSU Autonomous Club focuses on developing autonomous vehicles and robotics. We participate in various competitions and work on exciting projects that push the boundaries of technology.</p>
-                <h2>AI Club</h2>
-                <p>The AI Club at MSU is dedicated to exploring the latest advancements in artificial intelligence. We organize workshops, hackathons, and guest lectures to foster a community of AI enthusiasts and professionals.</p>
+                <h2>MSU Autonomous Vehicle Club</h2>
+                <p><strong>Software Developer</strong> - Jan 2024 - Present</p>
+                <p>Keeping the Software up-to-date by using ROS, DOCKER, C++, and Python, and Improving Efficiency of the model car, with data mining, by 22%.</p>
+                <p>Developed Skills in vehicle Path Planning, mapping, and obstacle avoidance in a competitive setting.</p>
+                <p>Developed Skills in Deep Learning and neural networks with 4 small LiDAR sensors.</p>
             </div>
         </div>
     </div>
-    <script>
-        function showContent(id) {
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => {
-                if (content.id === id) {
-                    content.classList.add('active');
-                } else {
-                    content.classList.remove('active');
-                }
-            });
-        }
-    </script>
-    ---
-    layout: framework
-    sidebar: archive-list
-    ---
-
-    {%- if site.posts.size > 0 -%}
-
-      {% include functions.html func='log' level='debug' msg='Get datetimes value' %}
-
-      {% assign filter = '%Y' %}
-      {% include functions.html func='get_datetimes' %}
-      {% assign datetimes = return %}
-
-      {% assign keys = datetimes | reverse %}
-      {% assign field = 'date' %}
-      {% include views/segments.html %}
-
-    {%- endif -%}
 </body>
 </html>
+
 
 
 
