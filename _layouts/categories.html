@@ -1,16 +1,94 @@
----
-layout: framework
-sidebar: category-list
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
 
-{%- if site.posts.size > 0 -%}
+        .background {
+            background-image: url('https://cdn-developer-wp.arc.dev/wp-content/uploads/2022/06/coding-programming-project-ideas-1128x635.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-  {%- include functions.html func='log' level='debug' msg='Get value' -%}
-  {%- include functions.html func='get_categories' -%}
-  {% assign categories = return %}
+        .content {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 20px;
+        }
 
-  {% assign keys = categories %}
-  {% assign field = 'categories' %}
-  {%- include views/segments.html -%}
+        .project {
+            margin-bottom: 20px;
+        }
 
-{%- endif -%}
+        .project h2 {
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="content">
+            <h1>Projects</h1>
+
+            <div class="project">
+                <h2>Medical AI Bot - Jan 2024</h2>
+                <p>Developed a data pipeline utilizing Python libraries such as langchain community for document loading and text processing of 700-page PDF, enabling efficient handling of PDF documents for information retrieval tasks.</p>
+                <p>Integrated state-of-the-art language models (LLMs) and embeddings from Hugging Face into a Retrieval QA system, facilitating accurate responses to user queries based on contextual understanding.</p>
+                <p>Implemented vector stores using FAISS to index and retrieve relevant documents, enhancing the scalability and performance of the information retrieval process in a medical chatbot application.</p>
+            </div>
+
+            <div class="project">
+                <h2>Data Science Bootcamp Project - Oct 2023 – Dec 2023</h2>
+                <p>Utilized TensorFlow Library to display and filter out statistics for the top NBA players in the NBA.</p>
+                <p>Utilized Matplotlib to gather data using Matrix Algebra and exported data to Excel for visual representation.</p>
+                <p>Used MATLAB to create hundreds of matrices with each individual player's stats and manipulate them.</p>
+                <p>Used Machine Learning algorithms to calculate outliers in the sample size.</p>
+            </div>
+
+            <div class="project">
+                <h2>Galaga Game for MSU Making a Game of IT - Summer Program - Jun 2022</h2>
+                <p>Developed the classic Galaga game using Python and Linear Algebra. Implemented two-dimensional arrays to store and track specific locations of enemy targets.</p>
+                <p>Employed recursion techniques to help with the shooting and enemy spawning system work smoothly.</p>
+            </div>
+        </div>
+    </div>
+
+    ---
+    layout: framework
+    sidebar: category-list
+    ---
+
+    {%- if site.posts.size > 0 -%}
+
+      {%- include functions.html func='log' level='debug' msg='Get value' -%}
+      {%- include functions.html func='get_categories' -%}
+      {% assign categories = return %}
+
+      {% assign keys = categories %}
+      {% assign field = 'categories' %}
+      {%- include views/segments.html -%}
+
+    {%- endif -%}
+</body>
+</html>
+
