@@ -56,7 +56,38 @@
             </div>
         </div>
     </div>
+    <script>
+        function showContent(id) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                if (content.id === id) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
+        }
+    </script>
+    ---
+    layout: framework
+    sidebar: archive-list
+    ---
+
+    {%- if site.posts.size > 0 -%}
+
+      {% include functions.html func='log' level='debug' msg='Get datetimes value' %}
+
+      {% assign filter = '%Y' %}
+      {% include functions.html func='get_datetimes' %}
+      {% assign datetimes = return %}
+
+      {% assign keys = datetimes | reverse %}
+      {% assign field = 'date' %}
+      {% include views/segments.html %}
+
+    {%- endif -%}
 </body>
 </html>
+
 
 
